@@ -1,0 +1,25 @@
+<%= form_with model: @mission, local: true do |f|%>
+  <div class="field">
+    <%= f.label :goal, "ゴール" %><br />
+    <%= f.text_field :goal, id:"goal" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mission1, "ミッション１" %><br />
+    <%= f.text_area :mission1, class: :form__text, id:"mission1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mission2, "ミッション２" %><br />
+    <%= f.text_area :mission2, class: :form__text, id:"mission2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mission3, "ミッション３" %><br />
+    <%= f.file_field :mission3, class: :form__text, id:"mission3" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "設定を完了する", class: :form__btn  %>
+  </div>
+<% end %>
