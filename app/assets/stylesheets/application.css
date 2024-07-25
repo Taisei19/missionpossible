@@ -3,13 +3,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #fffff0;
   text-align: center;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffB5;
+  color: #000000;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
@@ -66,4 +66,34 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+.card {
+  position: relative;
+  width: 16%; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  overflow: hidden; /* Ensure content is not clipped */
+}
+
+.card__body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.card__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.card__user, .card__title {
+  margin: 0;
+  padding: 5px; /* Adjust as needed */
+  border-radius: 5px;
+  text-align: left; /* Align text to the left */
 }

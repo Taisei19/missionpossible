@@ -15,7 +15,12 @@
         </section>
         <div class="card__wrapper">
       
-      <%= render partial: "mission", collection: @missions %>
+     
+
+<% @missions.each do |mission| %>
+  <%= render partial: 'mission', locals: { mission: mission } %>
+<% end %>
+
     </div>
     </main>
    

@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   resources :missions, only: [:index, :create, :new, :show]
-  resources :levels, only: [:update]
+  resources :levels, only: [:update]do
+    member do
+      patch 'decrement'
+    end
+  end
 end

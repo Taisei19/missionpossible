@@ -36,13 +36,11 @@
             <%= @mission.mission1 %>
           </p>
         </div>
+        <%= link_to "ミッションをもどす", decrement_level_path(@level), method: :patch, class: "btn btn-secondary" %>
         <%= link_to "たっせい！次のミッションに進む", level_path(@level), method: :patch, class: "btn btn-primary" %>
-     
       </div>
       
     </div>
   </div>
 </main>
-
-
 
