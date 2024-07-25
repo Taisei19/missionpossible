@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   root "missions#index"
   devise_for :users
   resources :users, only: [:show]
-  resources :missions, only: [:index, :create, :new]
-  
+  resources :missions, only: [:index, :create, :new, :show]
+  resources :levels, only: [:update]
 end

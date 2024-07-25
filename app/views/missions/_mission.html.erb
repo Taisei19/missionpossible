@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card__body">
+    <%= link_to mission.goal, mission_path(mission), class: "card__title" %>
+    <p class="card__summary">
+      <%= mission.goal %>
+    </p>
+    <%= link_to "by #{mission.user.name}", user_path(mission.user), class: "card__user" %>
+  </div>
+</div>

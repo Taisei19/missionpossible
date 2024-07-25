@@ -1,0 +1,48 @@
+<main class="main">
+  <div class="inner">
+    <div class="mission__wrapper">
+      <p class="mission__hedding">
+        <%= @mission.goal %>
+      </p>
+      <%= link_to @mission.user.name, user_path(@mission.user), class: :mission__user %>
+      <% if user_signed_in? && current_user.id == @mission.user_id %>
+      
+        <div class="prototype__manage">
+          <%= link_to "編集する", "/", class: :mission__btn %>
+          <%= link_to "削除する", "/", data: { turbo_method: :delete},class: :mission__btn %>
+        </div>
+      
+      <% end %>
+      <%#div class="prototype__image">
+       <%= image_tag url_for(@prototype.image) %>
+      <%#/div%>
+        <% if @level.number == 1 %>
+          <p>ミッション1: <%= @mission.mission1 %></p>
+        <% elsif @level.number == 2 %>
+          <p>ミッション2: <%= @mission.mission2 %></p>
+        <% elsif @level.number == 3 %>
+          <p>ミッション3: <%= @mission.mission3 %></p>
+        <% end %>
+      <div class="mission__body">
+        <div class="mission__detail">
+          <p class="detail__title">ゴール</p>
+          <p class="detail__message">
+            <%= @mission.goal %>
+          </p>
+        </div>
+        <div class="mission__detail">
+          <p class="detail__title">ミッション１</p>
+          <p class="detail__message">
+            <%= @mission.mission1 %>
+          </p>
+        </div>
+        <%= link_to "たっせい！次のミッションに進む", level_path(@level), method: :patch, class: "btn btn-primary" %>
+     
+      </div>
+      
+    </div>
+  </div>
+</main>
+
+
+

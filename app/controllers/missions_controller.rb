@@ -4,16 +4,27 @@ class MissionsController < ApplicationController
   end
 
   def new
-    @missions = Mission.all
+    @mission = Mission.new
   end
 
   def create
-    @missions = Mission.new  #(prototype_params)
+    @mission = current_user.missions.new(mission_params)
+    if @mission.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    @mission = Mission.find(params[:id]) 
+    @level = @mission.levels.find_by(user: current_user) || @mission.levels.create(user: current_user, number: 1)
+  end
   
-    # if @prototype.save
-      # redirect_to root_path
-    # else
-     # render :new, status: :unprocessable_entity
-    #end
-  end 
+  private
+
+  def mission_params
+    params.require(:mission).permit(:goal, :mission1, :mission2, :mission3)
+  end
+
 end
