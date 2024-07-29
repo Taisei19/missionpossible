@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_24_085336) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_26_091639) do
+  create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "mission_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mission_id"], name: "index_comments_on_mission_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "levels", charset: "utf8", force: :cascade do |t|
     t.integer "number"
     t.bigint "user_id"
@@ -41,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_24_085336) do
     t.datetime "remember_created_at"
   end
 
+  add_foreign_key "comments", "missions"
+  add_foreign_key "comments", "users"
   add_foreign_key "levels", "missions"
   add_foreign_key "levels", "users"
   add_foreign_key "missions", "users"

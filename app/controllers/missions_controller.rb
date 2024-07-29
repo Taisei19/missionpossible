@@ -19,6 +19,7 @@ class MissionsController < ApplicationController
   def show
     @mission = Mission.find(params[:id]) 
     @level = @mission.levels.find_by(user: current_user) || @mission.levels.create(user: current_user, number: 1)
+    @comment = Comment.new
   end
   
   private

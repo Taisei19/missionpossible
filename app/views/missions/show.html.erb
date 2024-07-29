@@ -1,46 +1,91 @@
 <main class="main">
   <div class="inner">
     <div class="mission__wrapper">
-      <p class="mission__hedding">
-        <%= @mission.goal %>
-      </p>
+      
       <%= link_to @mission.user.name, user_path(@mission.user), class: :mission__user %>
       <% if user_signed_in? && current_user.id == @mission.user_id %>
       
-        <div class="prototype__manage">
-          <%= link_to "編集する", "/", class: :mission__btn %>
-          <%= link_to "削除する", "/", data: { turbo_method: :delete},class: :mission__btn %>
-        </div>
-      
       <% end %>
-      <%#div class="prototype__image">
-       <%= image_tag url_for(@prototype.image) %>
-      <%#/div%>
-        <% if @level.number == 1 %>
-          <p>ミッション1: <%= @mission.mission1 %></p>
-        <% elsif @level.number == 2 %>
-          <p>ミッション2: <%= @mission.mission2 %></p>
-        <% elsif @level.number == 3 %>
-          <p>ミッション3: <%= @mission.mission3 %></p>
+      
+      <div class="mission__content">
+        <div class="mission__left">
+          <% if @level.number == 1 %>
+            <p>ミッション1: <%= @mission.mission1 %></p>
+          <% elsif @level.number == 2 %>
+            <p>ミッション2: <%= @mission.mission2 %></p>
+          <% elsif @level.number == 3 %>
+            <p>ミッション3: <%= @mission.mission3 %></p>
+          <% elsif @level.number == 4 %>
+            <p>ミッションコンプリート!! </p>
+          <% end %>
+          
+          <% if @level.number == 1 %>
+            <% image = "Mission1.png" %>
+          <% elsif @level.number == 2 %>
+            <% image = "Mission2.png" %>
+          <% elsif @level.number == 3 %>
+            <% image = "Mission3.png" %>
+          <% elsif @level.number == 4 %>
+            <% image = "Mission-Complete.png" %>
+          <% else %>
+            <% image = "default.png" %> <!-- Default image if level number is not 1-4 -->
+          <% end %>
+          <div class="mission__image">
+            <%= image_tag asset_path(image) %>
+          </div>
+          <div class="prototype__manage">
+          <%= link_to "（注意）このミッションを消す", "/", data: { turbo_method: :delete }, class: "btn btn-danger mission__btn" %>
+        </div>
+        </div>
+        
+        <div class="mission__right">
+          <div class="mission__detail">
+            <p class="detail__title">ゴール</p>
+            <p class="detail__message">
+              <%= @mission.goal %>
+            </p>
+          </div>
+          <div class="mission__detail">
+            <p class="detail__title">ミッション１</p>
+            <p class="detail__message">
+              <%= @mission.mission1 %>
+            </p>
+            <p class="detail__title">ミッション２</p>
+            <p class="detail__message">
+              <%= @mission.mission2 %>
+            </p>
+            <p class="detail__title">ミッション３</p>
+            <p class="detail__message">
+              <%= @mission.mission3 %>
+            </p>
+          </div>
+          <div class="btn-group">
+            <%= link_to "もどす", decrement_level_path(@level), method: :patch, class: "btn btn-secondary" %>
+            <%= link_to "次のミッションに進む！", level_path(@level), method: :patch, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comments">
+        <h3>おうえんメッセージ・アドバイス</h3>
+        <%= form_with(model: [ @mission, @comment ], local: true) do |form| %>
+          <div class="field">
+            <%= form.text_area :content %>
+          </div>
+          <div class="actions">
+            <%= form.submit "送信" %>
+          </div>
         <% end %>
-      <div class="mission__body">
-        <div class="mission__detail">
-          <p class="detail__title">ゴール</p>
-          <p class="detail__message">
-            <%= @mission.goal %>
-          </p>
+
+        <div class="comment-list">
+          <% @mission.comments.each do |comment| %>
+            <div class="comment">
+              <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+            </div>
+          <% end %>
         </div>
-        <div class="mission__detail">
-          <p class="detail__title">ミッション１</p>
-          <p class="detail__message">
-            <%= @mission.mission1 %>
-          </p>
-        </div>
-        <%= link_to "ミッションをもどす", decrement_level_path(@level), method: :patch, class: "btn btn-secondary" %>
-        <%= link_to "たっせい！次のミッションに進む", level_path(@level), method: :patch, class: "btn btn-primary" %>
       </div>
       
     </div>
   </div>
 </main>
-
