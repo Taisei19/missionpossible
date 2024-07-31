@@ -3,10 +3,7 @@
     <div class="mission__wrapper">
       
       <%= link_to @mission.user.name, user_path(@mission.user), class: :mission__user %>
-      <% if user_signed_in? && current_user.id == @mission.user_id %>
-      
-      <% end %>
-      
+
       <div class="mission__content">
         <div class="mission__left">
           <% if @level.number == 1 %>
@@ -33,9 +30,12 @@
           <div class="mission__image">
             <%= image_tag asset_path(image) %>
           </div>
-          <div class="prototype__manage">
-          <%= link_to "（注意）このミッションを消す", "/", data: { turbo_method: :delete }, class: "btn btn-danger mission__btn" %>
-        </div>
+          
+          <% if user_signed_in? && current_user.id == @mission.user_id %>
+            <div class="prototype__manage">
+              <%= link_to "（注意）このミッションを消す", mission_path , data: { turbo_method: :delete }, class: "btn btn-danger mission__btn" %>
+            </div>
+          <% end %>
         </div>
         
         <div class="mission__right">
@@ -59,22 +59,27 @@
               <%= @mission.mission3 %>
             </p>
           </div>
-          <div class="btn-group">
-            <%= link_to "もどす", decrement_level_path(@level), method: :patch, class: "btn btn-secondary" %>
-            <%= link_to "次のミッションに進む！", level_path(@level), method: :patch, class: "btn btn-primary" %>
-          </div>
+
+          <% if user_signed_in? && current_user.id == @mission.user_id %>
+            <div class="btn-group">
+              <%= link_to "もどす", decrement_level_path(@level), method: :patch, class: "btn btn-secondary" %>
+              <%= link_to "次のミッションに進む！", level_path(@level), method: :patch, class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
       </div>
       
       <div class="comments">
         <h3>おうえんメッセージ・アドバイス</h3>
-        <%= form_with(model: [ @mission, @comment ], local: true) do |form| %>
-          <div class="field">
-            <%= form.text_area :content %>
-          </div>
-          <div class="actions">
-            <%= form.submit "送信" %>
-          </div>
+        <% if user_signed_in? %>
+          <%= form_with(model: [ @mission, @comment ], local: true) do |form| %>
+            <div class="field">
+              <%= form.text_area :content %>
+            </div>
+            <div class="actions">
+              <%= form.submit "送信" %>
+            </div>
+          <% end %>
         <% end %>
 
         <div class="comment-list">

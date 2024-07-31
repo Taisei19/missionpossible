@@ -2,7 +2,7 @@ class Mission < ApplicationRecord
 
   belongs_to :user
   has_many :levels, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   after_create :create_initial_level
   
@@ -11,5 +11,5 @@ class Mission < ApplicationRecord
   def create_initial_level 
       levels.create(user: user, number: 1)
   end
-  
+
 end

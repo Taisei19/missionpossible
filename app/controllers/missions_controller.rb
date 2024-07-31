@@ -16,6 +16,12 @@ class MissionsController < ApplicationController
     end
   end
 
+  def destroy
+    @mission = Mission.find(params[:id])
+    @mission.destroy
+    redirect_to root_path
+  end
+
   def show
     @mission = Mission.find(params[:id]) 
     @level = @mission.levels.find_by(user: current_user) || @mission.levels.create(user: current_user, number: 1)

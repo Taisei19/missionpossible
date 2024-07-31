@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_26_091639) do
     t.datetime "remember_created_at"
   end
 
-  add_foreign_key "comments", "missions"
+  add_foreign_key "comments", "missions", on_delete: :cascade
   add_foreign_key "comments", "users"
   add_foreign_key "levels", "missions"
   add_foreign_key "levels", "users"
