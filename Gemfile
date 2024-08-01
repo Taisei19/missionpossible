@@ -75,3 +75,6 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem 'activerecord'
+group :production do
+  gem 'pg'
+end
