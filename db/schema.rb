@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_26_091639) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_09_143731) do
   create_table "comments", charset: "utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_26_091639) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "remember_created_at"
+    t.string "role"
   end
 
   add_foreign_key "comments", "missions", on_delete: :cascade
