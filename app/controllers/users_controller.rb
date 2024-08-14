@@ -8,11 +8,7 @@ class UsersController < ApplicationController
       @user.role = "student"
     end
   
-    if @user.save
-      # 成功時の処理
-    else
-      # エラー処理
-    end
+    
   end
   
   def show
