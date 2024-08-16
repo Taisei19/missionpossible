@@ -7,7 +7,13 @@ class UsersController < ApplicationController
     else
       @user.role = "student"
     end
-  
+    
+    if @user.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+ 
     
   end
   

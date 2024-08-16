@@ -85,7 +85,11 @@
         <div class="comment-list">
           <% @mission.comments.each do |comment| %>
             <div class="comment">
-              <p><strong><%= comment.user.name %>:</strong> <%= comment.content %></p>
+              <% if current_user.role == 'teacher' %>
+                <p><strong><%= comment.user.name %> : <%= comment.content %></strong></p>
+              <% else %>
+                <p><strong><%= comment.user.name %> :</strong> <%= comment.content %></p>
+              <% end %>          
             </div>
           <% end %>
         </div>
