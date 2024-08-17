@@ -79,22 +79,21 @@
             <div class="actions">
               <%= form.submit "送信" %>
             </div>
-          <% end %>
-        <% end %>
+          <% end %> <!-- form_withの閉じタグ -->
+        <% end %> <!-- user_signed_in? の閉じタグ -->
 
         <div class="comment-list">
           <% @mission.comments.each do |comment| %>
             <div class="comment">
-              <% if current_user.role == 'teacher' %>
+              <% if comment.user.role == 'teacher' %>
                 <p><strong><%= comment.user.name %> : <%= comment.content %></strong></p>
               <% else %>
-                <p><strong><%= comment.user.name %> :</strong> <%= comment.content %></p>
+                <p><%= comment.user.name %> : <%= comment.content %></p>
               <% end %>          
             </div>
           <% end %>
         </div>
-      </div>
-      
-    </div>
+      </div> 
+    </div> 
   </div>
-</main>
+</main> 
