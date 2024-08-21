@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   
+  def new
+    @user = User.new
+    super
+  end
+  
   def create
     @user = User.new(user_params)
     if params[:user][:username] == ENV['TEACHER_USERNAME'] && params[:user][:password] == ENV['TEACHER_PASSWORD']
@@ -24,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :role)
+    params.require(:user).permit(:name,  :email, :password, :password_confirmation, :role)
   end
 
 end
