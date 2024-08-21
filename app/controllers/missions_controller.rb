@@ -21,13 +21,21 @@ class MissionsController < ApplicationController
     @mission.destroy
     redirect_to root_path
   end
-
+  
   def show
-    @mission = Mission.find(params[:id]) 
-    @level = @mission.levels.find_by(user: current_user) || @mission.levels.create(user: current_user, number: 1)
+    @mission = Mission.find(params[:id])
+  
+    # 自分自身のmissionのlevelを取得する場合
+    if current_user == @mission.user
+      @level = @mission.levels.find_by(user: current_user) || @mission.levels.create(user: current_user, number: 1)
+    else
+      # 他のユーザーのmissionを見る場合、そのmissionのuserのlevelを取得
+      @level = @mission.levels.find_by(user: @mission.user)
+    end
+  
     @comment = Comment.new
   end
-  
+
   private
 
   def mission_params
