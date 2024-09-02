@@ -1,25 +1,31 @@
-<%= form_with model: @mission, local: true do |f|%>
+<%= form_with model: @mission, local: true do |f| %>
   <div class="field">
     <%= f.label :goal, "ゴール" %><br />
-    <%= f.text_field :goal, id:"goal" %>
+    <div class="goal-input-group">
+      <%= f.text_field :goal, id: "goal" %>
+      <%= button_tag "!", id: "generate_goal_image", type: "button", class: "form__btn" %>
+    </div>
   </div>
 
   <div class="field">
     <%= f.label :mission1, "ミッション１" %><br />
-    <%= f.text_area :mission1, class: :form__text, id:"mission1" %>
+    <%= f.text_area :mission1, class: :form__text, id: "mission1" %>
   </div>
 
   <div class="field">
     <%= f.label :mission2, "ミッション２" %><br />
-    <%= f.text_area :mission2, class: :form__text, id:"mission2" %>
+    <%= f.text_area :mission2, class: :form__text, id: "mission2" %>
   </div>
 
   <div class="field">
     <%= f.label :mission3, "ミッション３" %><br />
-    <%= f.text_area :mission3, class: :form__text, id:"mission3" %>
+    <%= f.text_area :mission3, class: :form__text, id: "mission3" %>
   </div>
 
   <div class="actions">
     <%= f.submit "設定完了", class: :form__btn  %>
   </div>
 <% end %>
+
+<!-- 画像を表示する領域 -->
+<div id="goal_image_container"></div>
