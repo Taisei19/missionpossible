@@ -4,19 +4,19 @@
 
 development:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
+  adapter: postgresql
   database: missionpossible_development
+  username: your_postgresql_username
+  password: your_postgresql_password
+  host: localhost
 
 test:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
+  adapter: postgresql
   database: missionpossible_test
+  username: your_postgresql_username
+  password: your_postgresql_password
+  host: localhost
 
 production:
   <<: *default
