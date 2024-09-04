@@ -34,22 +34,28 @@
 
 # 実装した機能についての画像やGIFおよびその他の説明
   ・ユーザー登録機能：名前などを入力し、新しくユーザーを登録します。
-    <video controls src="f721d0528d1942b621b97a319e90883a.mp4" title="Title"></video>
+  
+  <video controls src="f721d0528d1942b621b97a319e90883a.mp4" title="Title"></video>
 
   ・ログイン・ログアウト機能：ログイン・ログアウト状態を作ります。ログアウト状態の間は、ミッションを編集できません。
-    <video controls src="ad690625cf04d38580bafefd44cc386d.mp4" title="Title"></video>
+
+  <video controls src="ad690625cf04d38580bafefd44cc386d.mp4" title="Title"></video>
 
   ・ミッションの設定機能：ゴールと３つのミッションを設定します。
-    <video controls src="e9b0d44141f4c21715abdc18de2671ed.mp4" title="Title"></video>
+
+  <video controls src="e9b0d44141f4c21715abdc18de2671ed.mp4" title="Title"></video>
 
   ・ミッションのレベル上げ機能：「次のミッションを進む」ボタンで、ミッションのレベルや画像が変化します。
-    <video controls src="7f5e3fd9d59ce7b1ea75da43af2d0574.mp4" title="Title"></video>
+
+  <video controls src="7f5e3fd9d59ce7b1ea75da43af2d0574.mp4" title="Title"></video>
 
   ・コメント投稿機能：ユーザーが取り組んでいるミッションに対し、応援メッセージやアドバイスを投稿できます。（「教師役」でログインした場合、コメントは太字で表示されます。）
-    <video controls src="42bf5acc1defdf140283bfe83624f9b4.mp4" title="Title"></video>
+
+  <video controls src="42bf5acc1defdf140283bfe83624f9b4.mp4" title="Title"></video>
 
   ・ミッション削除機能：登録しているミッションを削除します。
-    <video controls src="9b2331a978b36a6346ecbb8e1592cdd5.mp4" title="Title"></video>
+
+  <video controls src="9b2331a978b36a6346ecbb8e1592cdd5.mp4" title="Title"></video>
 
 
 # 実装予定の機能
