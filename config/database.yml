@@ -7,15 +7,15 @@ default: &default
 development:
   <<: *default
   database: missionpossible_development
-  username: <your_postgresql_username>
-  password: <your_postgresql_password>
+  username: admin
+  password: 122333
   host: localhost
 
 test:
   <<: *default
   database: missionpossible_test
-  username: <your_postgresql_username>
-  password: <your_postgresql_password>
+  username: admin
+  password: 122333
   host: localhost
 
 production:
