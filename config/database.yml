@@ -1,21 +1,21 @@
-  default: &default
-  encoding: utf8
+default: &default
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
-  adapter: postgresql
   database: missionpossible_development
-  username: your_postgresql_username
-  password: your_postgresql_password
+  username: <your_postgresql_username>
+  password: <your_postgresql_password>
   host: localhost
 
 test:
   <<: *default
-  adapter: postgresql
   database: missionpossible_test
-  username: your_postgresql_username
-  password: your_postgresql_password
+  username: <your_postgresql_username>
+  password: <your_postgresql_password>
   host: localhost
 
 production:
