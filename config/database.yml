@@ -20,8 +20,8 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: missionpossible_production_qrl1
+  username: missionpossible_production_qrl1_user
+  password: iMzFKRvSolptqzb6VVcMzL1op175XPRz
   host: dpg-cr6lsddds78s73bvr2rg-a
-  port: <%= ENV['DATABASE_PORT'] %>
+  port: 5432
