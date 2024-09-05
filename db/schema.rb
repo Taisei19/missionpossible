@@ -22,20 +22,20 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_21_155412) do
   end
 
   create_table "levels", charset: "utf8", force: :cascade do |t|
-    t.integer "number"
+    t.integer "number", null: false
+    t.bigint "user_id"
     t.bigint "mission_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["mission_id"], name: "index_levels_on_mission_id"
     t.index ["user_id"], name: "index_levels_on_user_id"
   end
 
   create_table "missions", charset: "utf8", force: :cascade do |t|
-    t.string "goal"
-    t.string "mission1"
-    t.string "mission2"
-    t.string "mission3"
+    t.string "goal", null: false
+    t.string "mission1", null: false
+    t.string "mission2", null: false
+    t.string "mission3", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,17 +43,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_21_155412) do
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "encrypted_password"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "remember_created_at"
-    t.string "role"
   end
 
   add_foreign_key "comments", "missions", on_delete: :cascade
   add_foreign_key "comments", "users"
   add_foreign_key "levels", "missions"
+  add_foreign_key "levels", "users"
   add_foreign_key "missions", "users"
 end
