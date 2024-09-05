@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_21_155412) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "remember_created_at"
+    t.string "role"
   end
 
   add_foreign_key "comments", "missions", on_delete: :cascade

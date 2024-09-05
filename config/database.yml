@@ -4,12 +4,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  host: localhost
   port: <%= ENV.fetch("DATABASE_PORT", 3306) %>
 
 development:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>_development
+  database: missionpossible_production_qrl1_development
+  username: admin
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: localhost
 
 test:
   <<: *default
@@ -18,9 +21,3 @@ test:
 production:
   <<: *default
   database: <%= ENV['DATABASE_NAME'] %>_production
-
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
