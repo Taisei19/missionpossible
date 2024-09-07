@@ -34,7 +34,7 @@
 
 # 実装した機能についての画像やGIFおよびその他の説明
   ・ユーザー登録機能：名前などを入力し、新しくユーザーを登録します。 
-  <video controls src="f721d0528d1942b621b97a319e90883a.mp4" title="Title"></video>
+
   [![Image from Gyazo](https://i.gyazo.com/f721d0528d1942b621b97a319e90883a.gif)](https://gyazo.com/f721d0528d1942b621b97a319e90883a)
   
   ・ログイン・ログアウト機能：ログイン・ログアウト状態を作ります。ログアウト状態の間は、ミッションを編集できません。
