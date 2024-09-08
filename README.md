@@ -38,7 +38,7 @@
   [![Image from Gyazo](https://i.gyazo.com/f721d0528d1942b621b97a319e90883a.gif)](https://gyazo.com/f721d0528d1942b621b97a319e90883a)
   
   ・ログイン・ログアウト機能：ログイン・ログアウト状態を作ります。ログアウト状態の間は、ミッションを編集できません。
-  <video controls src="ad690625cf04d38580bafefd44cc386d.mp4" title="Title"></video>
+  
 [![Image from Gyazo](https://i.gyazo.com/ad690625cf04d38580bafefd44cc386d.gif)](https://gyazo.com/ad690625cf04d38580bafefd44cc386d)
 
   ・ミッションの設定機能：ゴールと３つのミッションを設定します。
