@@ -42,7 +42,7 @@
 [![Image from Gyazo](https://i.gyazo.com/ad690625cf04d38580bafefd44cc386d.gif)](https://gyazo.com/ad690625cf04d38580bafefd44cc386d)
 
   ・ミッションの設定機能：ゴールと３つのミッションを設定します。
-  <video controls src="e9b0d44141f4c21715abdc18de2671ed.mp4" title="Title"></video>
+  
   [![Image from Gyazo](https://i.gyazo.com/e9b0d44141f4c21715abdc18de2671ed.gif)](https://gyazo.com/e9b0d44141f4c21715abdc18de2671ed)
 
   ・ミッションのレベル上げ機能：「次のミッションを進む」ボタンで、ミッションのレベルや画像が変化します。
