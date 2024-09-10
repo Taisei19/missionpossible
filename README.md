@@ -46,7 +46,7 @@
   [![Image from Gyazo](https://i.gyazo.com/e9b0d44141f4c21715abdc18de2671ed.gif)](https://gyazo.com/e9b0d44141f4c21715abdc18de2671ed)
 
   ・ミッションのレベル上げ機能：「次のミッションを進む」ボタンで、ミッションのレベルや画像が変化します。
-  <video controls src="7f5e3fd9d59ce7b1ea75da43af2d0574.mp4" title="Title"></video>
+  
   [![Image from Gyazo](https://i.gyazo.com/4654c3e2c39784de5121c8a799668ebd.gif)](https://gyazo.com/4654c3e2c39784de5121c8a799668ebd)
 
   ・コメント投稿機能：ユーザーが取り組んでいるミッションに対し、応援メッセージやアドバイスを投稿できます。（「教師役」でログインした場合、コメントは太字で表示されます。）
