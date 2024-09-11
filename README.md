@@ -50,7 +50,7 @@
   [![Image from Gyazo](https://i.gyazo.com/4654c3e2c39784de5121c8a799668ebd.gif)](https://gyazo.com/4654c3e2c39784de5121c8a799668ebd)
 
   ・コメント投稿機能：ユーザーが取り組んでいるミッションに対し、応援メッセージやアドバイスを投稿できます。（「教師役」でログインした場合、コメントは太字で表示されます。）
-  <video controls src="42bf5acc1defdf140283bfe83624f9b4.mp4" title="Title"></video>
+  
   [![Image from Gyazo](https://i.gyazo.com/42bf5acc1defdf140283bfe83624f9b4.gif)](https://gyazo.com/42bf5acc1defdf140283bfe83624f9b4)
 
   ・ミッション削除機能：登録しているミッションを削除します。
