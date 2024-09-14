@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "/generate_image", to: "missions#generate_image"
   root "missions#index"
   
   # Deviseのルーティングにカスタムコントローラーを指定
