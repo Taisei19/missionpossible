@@ -17,7 +17,7 @@ class ImageGenerationService
     end
   rescue => e
     Rails.logger.error "Error generating image: #{e.message}"
-    nil
+    
   end
 
 end
